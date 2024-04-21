@@ -4,6 +4,7 @@ output="iptables.log"
 DMZIpAddr="192.168.254.3"
 RouterIPAddr="192.168.254.1"
 telnetOpenURL="http://${RouterIPAddr}/usr=CMCCAdmin&psw=aDm8H%25MdA&cmd=1&telnet.gch"
+telnetCloseURL="http://${RouterIPAddr}/usr=CMCCAdmin&psw=aDm8H%25MdA&cmd=0&telnet.gch"
 getPublicIPAddrURL="http://ipv4.rehi.org/ip"
 vHostAddr0="192.168.254.2"
 
@@ -100,3 +101,4 @@ EOF
         fi
 
 echo "${pIPAddress}" >> $output
+setTelnet=$(curl -s -A ""  ${telnetCloseURL})
